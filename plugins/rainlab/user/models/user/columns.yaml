@@ -1,0 +1,63 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: ID
+        invisible: true
+
+    login:
+        label: Login
+        searchable: true
+
+    name:
+        label: Name
+        searchable: true
+
+    email:
+        label: Email
+        searchable: true
+
+    created_at:
+        label: Registered
+
+    phone:
+        label: Phone
+        searchable: true
+        invisible: true
+
+    company:
+        label: Company
+        searchable: true
+        invisible: true
+
+    city:
+        label: City
+        searchable: true
+        invisible: true
+
+    zip:
+        label: Zip
+        searchable: true
+        invisible: true
+
+    street_addr:
+        label: Street Address
+        searchable: true
+        invisible: true
+
+    country:
+        label: Country
+        searchable: true
+        invisible: true
+        relation: country
+        select: @name
+
+    state:
+        label: State
+        searchable: true
+        invisible: true
+        relation: country
+        select: @name

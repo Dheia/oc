@@ -1,0 +1,76 @@
+@import "../../../../assets/less/core/boot.less";
+
+@richeditor-toolbar-size: 30px;
+@richeditor-zindex: 300;
+@richeditor-gutter: 20px;
+
+@import "_redactor.less";
+@import "_figures.less";
+@import "_shared.less";
+
+.field-flush .field-richeditor {
+    &, &.editor-focus {
+        border: none;
+    }
+}
+
+.field-richeditor {
+    border: 1px solid @color-form-field-border;
+    &, .redactor_box {
+        .border-radius(5px);
+    }
+    .redactor_toolbar {
+        .border-top-radius(3px);
+    }
+
+    &.editor-focus {
+        border-color: @color-form-field-border-focus;
+    }
+
+    &.size-tiny .redactor_editor     { height: (@size-tiny - @richeditor-toolbar-size) !important; }
+    &.size-small .redactor_editor    { height: (@size-small - @richeditor-toolbar-size) !important; }
+    &.size-large .redactor_editor    { height: (@size-large - @richeditor-toolbar-size) !important; }
+    &.size-huge .redactor_editor     { height: (@size-huge - @richeditor-toolbar-size) !important; }
+    &.size-giant .redactor_editor    { height: (@size-giant - @richeditor-toolbar-size) !important; }
+}
+
+//
+// Stretch
+//
+
+.field-richeditor.stretch {
+    .redactor_box {
+        display: block;
+        position: relative;
+        height: 100%!important;
+        width: 100%!important;
+        overflow: hidden;
+
+        .redactor_toolbar {
+            display: block;
+            border-bottom: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .redactor_editor, textarea {
+            height: auto !important;
+            width: 100%!important;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+        }
+
+        textarea {
+            padding: 10px;
+        } 
+
+        iframe {
+            display: block;
+            position: absolute;
+            height: 100% !important;
+        }
+    }
+}

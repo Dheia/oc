@@ -1,0 +1,18 @@
+<div class="control-componentlist">
+    <?php 
+        foreach ($components as $component) {
+            if ($component->isHidden)
+                echo $this->makePartial('component', ['component'=>$component]);
+        }
+    ?>
+    <div class="components" data-control="toolbar">
+        <div class="layout">
+            <?php 
+                foreach ($components as $component) {
+                    if (!$component->isHidden)
+                        echo $this->makePartial('component', ['component'=>$component]);
+                }
+            ?>
+        </div>
+    </div>
+</div>
